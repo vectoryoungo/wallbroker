@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/juhongtao/wallbroker/Sales_item.cpp
+Sales_item.h
+/Users/juhongtao/wallbroker/Sales_item.h
+iostream
+-
+
+/Users/juhongtao/wallbroker/Sales_item.h
+iostream
+-
+string
+-
+cmath
+-
+cctype
+-
+vector
+-
+
+/Users/juhongtao/wallbroker/main.cpp
+iostream
+-
+cmath
+-
+cctype
+-
+vector
+-
+time.h
+-
+string
+-
+
