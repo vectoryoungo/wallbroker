@@ -49,10 +49,10 @@ void fooBar(int ival)
 {
     bool  read = false;//新作用域：隱藏了外層的read
     //string s = read();//錯誤，read是一個布爾值，而非函數
-    void print(int);//不好的習慣，通常來說，在局部作用域中聲明函數不是一個好的選擇。新作用域，隱藏了之前的print
+    //void print(int);//不好的習慣，通常來說，在局部作用域中聲明函數不是一個好的選擇。新作用域，隱藏了之前的print
     //print("Value: ");//錯誤：print(const string &)被隱藏掉了
     print(ival);//正確，當前print(int)可見
-    print(3.14);//正確，調用print(int);print(double)被隱藏掉了。
+    print(3.14d);//正確，調用print(int);print(double)被隱藏掉了。
 }
 
 
