@@ -4,6 +4,8 @@
 #include <vector>
 #include <time.h>
 #include <string>
+#include "Sales_data.h"
+
 using namespace std;
 
 string getTime()
@@ -51,8 +53,8 @@ void fooBar(int ival)
     //string s = read();//錯誤，read是一個布爾值，而非函數
     //void print(int);//不好的習慣，通常來說，在局部作用域中聲明函數不是一個好的選擇。新作用域，隱藏了之前的print
     //print("Value: ");//錯誤：print(const string &)被隱藏掉了
-    print(ival);//正確，當前print(int)可見
-    print(3.14d);//正確，調用print(int);print(double)被隱藏掉了。
+    //print(ival);//正確，當前print(int)可見
+    //print(3.14d);//正確，調用print(int);print(double)被隱藏掉了。
 }
 
 
@@ -351,6 +353,29 @@ int main() {
     string str("this is test");
     string str2("and this is another");
     cout<<shorterString(str,str2)<<endl;
+
+
+    Sales_data total;
+
+    if (read(cin,total))
+    {
+        Sales_data trans;
+
+        while (read(cin,trans))
+        {
+            if (total.isbn() == trans.isbn())
+            {
+                total.combine(trans);
+            } else {
+                print(cout,total)<<endl;
+                total = trans;
+            }
+        }
+
+        print(cout,total) << endl;
+    } else{
+        cerr << "No data ?!"<<endl;
+    }
 
     return 0;
 }
