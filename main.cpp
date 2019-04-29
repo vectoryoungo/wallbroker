@@ -57,6 +57,9 @@ void fooBar(int ival)
     //print(3.14d);//正確，調用print(int);print(double)被隱藏掉了。
 }
 
+std::function<int(void)> f(std::shared_ptr<int> x) {
+    return [&]() { return *x; };
+}
 
 int main() {
 
@@ -391,6 +394,15 @@ int main() {
     std::string_view sv = s + "World\n";
     std::cout <<sv<<endl;
     std::cout << s;
+
+    std::function<int(void)> y(nullptr);
+    {
+        std::shared_ptr<int> x(std::make_shared<int>(4));
+        y = f(x);
+    }
+    std::cout<<"this is release after use "<< y() << std::endl;
+
+
     return 0;
 }
 
