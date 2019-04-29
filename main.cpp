@@ -386,6 +386,11 @@ int main() {
         cerr << "No data ?!"<<endl;
     }*/
 
+
+    std::string s = "Hellooooooooooooooo ";
+    std::string_view sv = s + "World\n";
+    std::cout <<sv<<endl;
+    std::cout << s;
     return 0;
 }
 
