@@ -354,10 +354,19 @@ int main() {
     string str2("and this is another");
     cout<<shorterString(str,str2)<<endl;
 
+    const std::string initialString = "this is sales_data ";
+    Sales_data *total = new Sales_data(initialString);
+    cout<<"into test Sales_data "<<endl;
+    cout<<total->isbn()<<endl;
 
-    Sales_data total;
+    //delete total;
+    free(total);
+    cout<<"total is delete "<<endl;
+    //cout<<total<<endl;
+    cout<<total->isbn()<<endl;
 
-    if (read(cin,total))
+
+    /*if (read(cin,total))
     {
         Sales_data trans;
 
@@ -375,7 +384,7 @@ int main() {
         print(cout,total) << endl;
     } else{
         cerr << "No data ?!"<<endl;
-    }
+    }*/
 
     return 0;
 }
