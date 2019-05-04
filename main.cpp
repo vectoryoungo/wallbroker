@@ -5,6 +5,7 @@
 #include <time.h>
 #include <string>
 #include "Sales_data.h"
+#include "Screen"
 
 using namespace std;
 
@@ -390,7 +391,7 @@ int main() {
     }*/
 
 
-    std::string s = "Hellooooooooooooooo ";
+   /* std::string s = "Hellooooooooooooooo ";
     std::string_view sv = s + "World\n";
     std::cout <<sv<<endl;
     std::cout << s;
@@ -402,6 +403,17 @@ int main() {
     }
     std::cout<<"this is release after use "<< y() << std::endl;
 
+*/
+
+    Screen myscreen;
+    Screen temp = myscreen.move(4,0);
+    temp.set('#');
+
+    cout<<"myScreen "<<myscreen.get(4,0)<<endl;
+    cout<<"myScreen "<<myscreen.get()<<endl;
+
+    cout<<temp.get()<<endl;
+    cout<<temp.get(4,0)<<endl;
 
     return 0;
 }
