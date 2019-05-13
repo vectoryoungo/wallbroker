@@ -5,6 +5,7 @@
 #include <time.h>
 #include <string>
 #include "Sales_data.h"
+#include "Screen.h"
 
 using namespace std;
 
@@ -376,6 +377,14 @@ int main() {
     } else{
         cerr << "No data ?!"<<endl;
     }
+
+    Screen::pos ht = 24,wd = 80;
+    Screen scr(ht,wd,' ');
+    Screen *poin = &scr;
+    char ccc = scr.get();
+    ccc = poin->get();
+    cout<<"c is "<<ccc<<endl;
+
 
     return 0;
 }
