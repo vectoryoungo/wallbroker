@@ -5,7 +5,7 @@
 #include <time.h>
 #include <string>
 #include "Sales_data.h"
-#include "Screen.h"
+#include "Screen"
 
 using namespace std;
 
@@ -58,6 +58,9 @@ void fooBar(int ival)
     //print(3.14d);//正確，調用print(int);print(double)被隱藏掉了。
 }
 
+std::function<int(void)> f(std::shared_ptr<int> x) {
+    return [&]() { return *x; };
+}
 
 int main() {
 
@@ -355,10 +358,19 @@ int main() {
     string str2("and this is another");
     cout<<shorterString(str,str2)<<endl;
 
+    const std::string initialString = "this is sales_data ";
+    Sales_data *total = new Sales_data(initialString);
+    cout<<"into test Sales_data "<<endl;
+    cout<<total->isbn()<<endl;
 
-    Sales_data total;
+    //delete total;
+    free(total);
+    cout<<"total is delete "<<endl;
+    //cout<<total<<endl;
+    cout<<total->isbn()<<endl;
 
-    if (read(cin,total))
+
+    /*if (read(cin,total))
     {
         Sales_data trans;
 
@@ -376,7 +388,32 @@ int main() {
         print(cout,total) << endl;
     } else{
         cerr << "No data ?!"<<endl;
+    }*/
+
+
+   /* std::string s = "Hellooooooooooooooo ";
+    std::string_view sv = s + "World\n";
+    std::cout <<sv<<endl;
+    std::cout << s;
+
+    std::function<int(void)> y(nullptr);
+    {
+        std::shared_ptr<int> x(std::make_shared<int>(4));
+        y = f(x);
     }
+    std::cout<<"this is release after use "<< y() << std::endl;
+
+*/
+
+    Screen myscreen;
+    Screen temp = myscreen.move(4,0);
+    temp.set('#');
+
+    cout<<"myScreen "<<myscreen.get(4,0)<<endl;
+    cout<<"myScreen "<<myscreen.get()<<endl;
+
+    cout<<temp.get()<<endl;
+    cout<<temp.get(4,0)<<endl;
 
     Screen::pos ht = 24,wd = 80;
     Screen scr(ht,wd,' ');
