@@ -1,3 +1,4 @@
+/*
 //
 // Created by smithjohn on 2019-04-28.
 //
@@ -16,3 +17,4 @@ private:
 
 
 #endif //WALLBROKER_WINDOW_MGR_H
+*/

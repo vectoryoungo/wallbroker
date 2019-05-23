@@ -5,8 +5,7 @@
 #include <time.h>
 #include <string>
 #include "Sales_data.h"
-#include "Screen"
-
+#include "Screen.h"
 using namespace std;
 
 string getTime()
