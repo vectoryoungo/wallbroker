@@ -5,7 +5,8 @@
 #include <time.h>
 #include <string>
 #include "Sales_data.h"
-#include "Screen"
+#include "ConstRef.h"
+
 
 using namespace std;
 
@@ -405,7 +406,7 @@ int main() {
 
 */
 
-    Screen myscreen;
+    /*Screen myscreen;
     Screen temp = myscreen.move(4,0);
     temp.set('#');
 
@@ -420,8 +421,9 @@ int main() {
     Screen *poin = &scr;
     char ccc = scr.get();
     ccc = poin->get();
-    cout<<"c is "<<ccc<<endl;
-
+    cout<<"c is "<<ccc<<endl;*/
+    ConstRef constRef;
+    constRef.ri
 
     return 0;
 }
